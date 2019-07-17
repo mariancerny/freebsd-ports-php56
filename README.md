@@ -23,6 +23,7 @@ To build the packages you need to add the following to `/etc/make.conf`:
                     pspell readline recode session shmop simplexml snmp soap \
                     sockets spl sqlite3 sybase_ct sysvmsg sysvsem sysvshm \
                     tidy tokenizer wddx xml xmlreader xmlrpc xmlwriter xsl zip zlib
+    mysql_DEPENDS=  databases/php${PHP_VER}-mysql
 
 Then extract this subtree somewhere in the filesystem (here `/usr/local/ports/php56`):
 
@@ -53,7 +54,7 @@ For example if you try to build `databases/php56-pdo_mysql` first you get the fo
     Stop.
     make[1]: stopped in /opt/ports/php56/databases/php56-pdo_mysql
 
-You must install `databases/php56-pdo` manually before installing `databases/php56-pdo_mysq`.
+You must install `databases/php56-pdo` manually before installing `databases/php56-pdo_mysql`.
 Similarilly you must install `textproc/php56-xml` before `textproc/php56-xmlreader`, etc.
 
 You can even install the meta port `lang/php56-extensions` (for example when you need to export the packages using `pkg create` & `pkg repo`),
