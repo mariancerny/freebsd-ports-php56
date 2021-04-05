@@ -25,19 +25,19 @@ To build the packages you need to add the following to `/etc/make.conf`:
                     tidy tokenizer wddx xml xmlreader xmlrpc xmlwriter xsl zip zlib
     mysql_DEPENDS=  databases/php${PHP_VER}-mysql
 
-Then extract this subtree somewhere in the filesystem (here `/usr/local/ports/php56`):
+Then extract this subtree somewhere in the filesystem (here `/opt/ports/php56`):
 
-	mkdir -p /usr/local/ports/php56
-	git clone https://github.com/mariancerny/freebsd-ports-php56.git /usr/local/ports/php56
+	mkdir -p /opt/ports/php56
+	git clone https://github.com/mariancerny/freebsd-ports-php56.git /opt/ports/php56
 
 ## Installing
 
 Now you can build individual packages:
 
-	cd /usr/local/ports/php56/lang/php56
+	cd /opt/ports/php56/lang/php56
 	make install
 
-	cd /usr/local/ports/php56/www/mod_php56
+	cd /opt/ports/php56/www/mod_php56
 	make install
 
 ## Caveats
@@ -59,6 +59,12 @@ Similarilly you must install `textproc/php56-xml` before `textproc/php56-xmlread
 
 You can even install the meta port `lang/php56-extensions` (for example when you need to export the packages using `pkg create` & `pkg repo`),
 you must just install all the selected packages manually beforehand.
+
+Another option would be to mount the repository using unionfs onto `/usr/ports` (as suggested by [TLINDEN](https://github.com/mariancerny/freebsd-ports-php56/issues/5)), e.g.:
+
+    mount -t unionfs -o ro /opt/ports/php56 /usr/ports
+
+Then all dependencies build automatically just fine.
 
 ## Testing
 
