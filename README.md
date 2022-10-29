@@ -1,8 +1,8 @@
 # FreeBSD PHP 5.6 ports
 
-FreeBSD ports subtree to build packages for the unsupported (EoL) PHP 5.6 version.
+FreeBSD ports subtree to build packages for the unsupported (EOL) PHP 5.6 version.
 
-Updated to the lasted version 5.6.40.
+Updated to the latest version [PHP 5.6.40](https://prototype.php.net/versions/5.6.40/).
 
 ## Preparation
 
