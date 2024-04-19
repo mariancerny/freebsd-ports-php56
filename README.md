@@ -2,7 +2,7 @@
 
 FreeBSD ports subtree to build packages for the unsupported (EoL) PHP 5.6 version.
 
-Updated to the lasted version 5.6.40.
+Updated to the latest PHP version 5.6.40.
 
 ## Preparation
 
@@ -66,16 +66,10 @@ Another option would be to mount the repository using unionfs onto `/usr/ports` 
 
 Then all dependencies build automatically just fine.
 
-### php56-gd and freetype2
-
-`print/freetype2` has been updated to 2.11 on 2021-09-31 in the FreeBSD ports tree.
-However `php56-gd` does not build properly with `freetype` 2.11.
-To install `php56-gd`, you have to install `freetype` 2.10.4 manually. It can be found in this ports tree in `php56/print/freetype2`.
-
 ## Testing
 
 Tested on FreeBSD 11.2 and 12.0 with main FreeBSD ports tree from May 2019.
 
 It may break in a future version of the main FreeBSD ports tree. Hopefully, it will last for some time.
 
-Update: Still works on FreeBSD 12.2 on ports tree from Dec 2021.
+Update: Still works on FreeBSD 12.4 with freebsd-ports tree branch 2023Q4.
